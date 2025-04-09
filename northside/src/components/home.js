@@ -1,22 +1,10 @@
 import React from "react";
 
-
-export const Banner = () => {
-    return (
-        <h1>NorthSide Youth Soccer League</h1>
-    )
-};
-
-export const ButtonCount = ({ initialCount }) => {
-    const [count, setCount] = React.useState(initialCount);
+export const Home = () => {
     return (
         <>
-            <div>
-                <button onclick={() => setCount(count + 1)}>+</button>
-                <button onclick={() => setCount(count - 1)}>-</button>
-            </div>
-            <div>
-                {count}
+            <div className="home-page">
+                <Announcements />
             </div>
         </>
     )
