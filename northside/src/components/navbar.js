@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "../index.css"
 
 export const Navbar = () => {
     return (
@@ -7,13 +8,19 @@ export const Navbar = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="./">Home</Link>
+                        <NavLink to="./" className={({ isActive }) => (isActive ? 'active' : '')}>
+                            Home
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="./schedules">Schedules</Link>
+                        <NavLink to="./schedules" className={({ isActive }) => (isActive ? 'active' : '')}>
+                            Schedules
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="./registration">Registration Form</Link>
+                        <NavLink to="./registration" className={({ isActive }) => (isActive ? 'active' : '')}>
+                            Registration Form
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
