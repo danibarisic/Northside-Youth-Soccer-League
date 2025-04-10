@@ -1,0 +1,85 @@
+{
+    "locations": {
+        "Gornale": {
+            "name": "Campo Municipal de Fútbol Gornal",
+            "address": "Av. Carmen Amaya, 57, 08902 L'Hospitalet de Llobregat, Barcelona",
+            "mapURL": "https://maps.app.goo.gl/UGtHj3CFy9GqoXBT6"
+        },
+        "La Torrassa": {
+            "name": "Camp de fútbol La Torrassa",
+            "address": "Carrer del Montseny, 190, 08904 L'Hospitalet de Llobregat, Barcelona",
+            "mapURL": "https://maps.app.goo.gl/HjHa8J8C6aJ8HTat8"
+        },
+        "Nou Sardenya": {
+            "name": "Estadio Municipal Nou Sardenya",
+            "address": "C.de les Camèlies, 42B, Gràcia, 08024 Barcelona",
+            "mapURL": "https://maps.app.goo.gl/pcQsojTfYcVD4CgX7"
+        },
+        "Dani Jarque": {
+            "name": "Ciudad Deportiva Dani Jarque",
+            "address": "Carretera de Mataró, 76-122, 08930 Sant Adrià de Besòs, Barcelona",
+            "mapURL": "https://maps.app.goo.gl/4NbnqPJ7nZExSXin8"
+        },
+        "Constantí Miranda": {
+            "name": "Estadio Municipal de Atletismo Constantí Miranda",
+            "address": "Carretera de l'Estadi, 0, 08830 Sant Boi de Llobregat, Barcelona",
+            "mapURL": "https://maps.app.goo.gl/f8hcb5jESiAvap6W8"
+        },
+        "Promosportive": {
+            "name": "Fútbol Sala Promosportive",
+            "address": "Camí Pau Redó, s/n, 08908 L'Hospitalet de Llobregat, Barcelona",
+            "mapURL": "https://maps.app.goo.gl/hk7PRbE9Tv73JhHY6"
+        }
+    },
+    "games": {
+        "game1": {
+            "date": "2025_01_22_1",
+            "time": "19:00h",
+            "team1": "Rocket FC",
+            "team2": "Lightning Club",
+            "location": "Constanti Miranda"
+        },
+        "game2": {
+            "date": "2025_01_24_1",
+            "time": "19:00h",
+            "team1": "Dynamos FC",
+            "team2": "Village Vikings",
+            "location": "Nou Sardenya"
+        },
+        "game3": {
+            "date": "2025_02_03_1",
+            "time": "21:00h",
+            "team1": "Strikers X",
+            "team2": "Quantum FC",
+            "location": "La Torrassa"
+        },
+        "game4": {
+            "date": "2025_02_08_1",
+            "time": "20:30h",
+            "team1": "Rocket FC",
+            "team2": "Dynamos FC",
+            "location": "Gornal"
+        },
+        "game5": {
+            "date": "2025_02_11_1",
+            "time": "20:00h",
+            "team1": "Lightning Club",
+            "team2": "Village Vikings",
+            "location": "Dani Jarque"
+        },
+        "game6": {
+            "date": "2025_02_15_1",
+            "time": "19:30",
+            "team1": "Rocket FC",
+            "team2": "Strikers X",
+            "location": "Promosportive"
+        },
+        "game7": {
+            "date": "2025_02_19_1",
+            "time": "20:30",
+            "team1": "Quantum FC",
+            "team2": "Dynamos FC",
+            "location": "Promosportive"
+        }
+    }
+}
