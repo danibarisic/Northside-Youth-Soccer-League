@@ -127,6 +127,12 @@ nav ul li a.active {
   background-color: rgb(231, 250, 215);
 }
 
+.header-row {
+  border: solid 5px black;
+  gap: 2px;
+  padding: 10px;
+}
+
 .table-schedule {
   background-color: white;
   margin: 20px;
@@ -137,6 +143,18 @@ nav ul li a.active {
   gap: 1.5rem;
   border: solid 5px black;
   border-radius: 8px;
+}
+
+th {
+  display: inline-block;
+}
+
+.table-row {
+  font-family: sportFont;
+}
+
+.table-row:hover {
+  background-color: rgb(229, 229, 229);
 }
 
 .registration-page,
