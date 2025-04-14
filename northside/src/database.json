@@ -33,6 +33,7 @@
     },
     "games": {
         "game1": {
+            "id": "1",
             "date": "2025_01_22_1",
             "time": "19:00h",
             "team1": "Rocket FC",
@@ -40,6 +41,7 @@
             "location": "Constanti Miranda"
         },
         "game2": {
+            "id": "2",
             "date": "2025_01_24_1",
             "time": "19:00h",
             "team1": "Dynamos FC",
@@ -47,6 +49,7 @@
             "location": "Nou Sardenya"
         },
         "game3": {
+            "id": "3",
             "date": "2025_02_03_1",
             "time": "21:00h",
             "team1": "Strikers X",
@@ -54,6 +57,7 @@
             "location": "La Torrassa"
         },
         "game4": {
+            "id": "4",
             "date": "2025_02_08_1",
             "time": "20:30h",
             "team1": "Rocket FC",
@@ -61,6 +65,7 @@
             "location": "Gornal"
         },
         "game5": {
+            "id": "5",
             "date": "2025_02_11_1",
             "time": "20:00h",
             "team1": "Lightning Club",
@@ -68,6 +73,7 @@
             "location": "Dani Jarque"
         },
         "game6": {
+            "id": "6",
             "date": "2025_02_15_1",
             "time": "19:30",
             "team1": "Rocket FC",
@@ -75,6 +81,7 @@
             "location": "Promosportive"
         },
         "game7": {
+            "id": "7",
             "date": "2025_02_19_1",
             "time": "20:30",
             "team1": "Quantum FC",
