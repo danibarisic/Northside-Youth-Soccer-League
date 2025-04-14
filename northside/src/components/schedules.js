@@ -12,7 +12,7 @@ export const Schedules = () => {
                 </div>
                 <div className="table-container">
                     <table className="table-schedule">
-                        <thead>
+                        <thead className="header-row">
                             <tr>
                                 <th>Date</th>
                                 <th>Time</th>
