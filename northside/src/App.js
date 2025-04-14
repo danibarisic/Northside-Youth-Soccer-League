@@ -12,7 +12,8 @@ export const Banner = () => {
   return (
     <>
       <div className="banner-container">
-        <img className="logoImg" src={images.logo} alt="Soccer Ball Logo" />
+        {/* <img className="logoImg" src={images.logo} alt="Soccer Ball Logo" /> */}
+        <img className="logoImg" src={images.ballLogo} alt="NYSL Logo" />
         <h1>NYSL</h1>
       </div>
     </>
