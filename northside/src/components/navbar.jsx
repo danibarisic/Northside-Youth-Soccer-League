@@ -5,7 +5,7 @@ import "../index.css"
 export const Navbar = () => {
     return (
         <div className="container-navbar">
-            <nav>
+            <nav className="navbar">
                 <ul>
                     <li>
                         <NavLink to="./" className={({ isActive }) => (isActive ? 'active' : '')}>
@@ -17,11 +17,11 @@ export const Navbar = () => {
                             Schedules
                         </NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                         <NavLink to="./registration" className={({ isActive }) => (isActive ? 'active' : '')}>
                             Registration Form
                         </NavLink>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
         </div>

@@ -12,7 +12,7 @@ export const LocationTable = () => {
     const arrayOfLocations = Object.values(games);
     const listLocations = arrayOfLocations[0];
 
-    const listOfLocations = Object.values(listLocations).map((location) => (
+    const listOfLocations = Object.values(listLocations).flatMap((location) => (
         <tr className="table-row" key={location.id}
             onClick={() => handleRowClick(location.id)}
             style={{ cursor: 'pointer' }}>

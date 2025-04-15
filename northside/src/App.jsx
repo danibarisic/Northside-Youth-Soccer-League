@@ -7,6 +7,7 @@ import { Home } from "./components/home";
 import { Registration } from "./components/registration";
 import { Schedules } from "./components/schedules";
 import { Navbar } from "./components/navbar"
+import { GameDetails } from './components/gamedetails';
 
 export const Banner = () => {
   return (
@@ -14,7 +15,7 @@ export const Banner = () => {
       <div className="banner-container">
         {/* <img className="logoImg" src={images.logo} alt="Soccer Ball Logo" /> */}
         <img className="logoImg" src={images.ballLogo} alt="NYSL Logo" />
-        <h1>NYSL</h1>
+        <h1 className="display-1 text-white mt-4">NYSL</h1>
       </div>
     </>
   )
@@ -33,6 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/schedules" element={<Schedules />} />
+          <Route path="/details/1" element={<GameDetails />} />
           <Route path="/registration" element={<Registration />} />
         </Routes>
       </Router>

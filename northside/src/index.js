@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 <head>
   <title>NYSL</title>
+  <link rel="icon" href="%PUBLIC_URL%/northside/src/assets/images/nysl_logo.ico" />
 </head>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

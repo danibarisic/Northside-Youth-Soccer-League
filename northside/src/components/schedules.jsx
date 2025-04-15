@@ -9,7 +9,7 @@ export const Schedules = () => {
             <div className="container-schedule">
                 <div className="container-content py-3">
                     <h2>Game Schedules</h2>
-                    <h3>Winter Season</h3>
+                    <h3>Winter-Spring Season</h3>
                 </div>
                 <div>
                     <table className="table table-striped table-dark table-hover">
