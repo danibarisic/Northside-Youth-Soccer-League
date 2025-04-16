@@ -5,17 +5,15 @@ import { useNavigate } from 'react-router-dom';
 
 export const LocationTable = () => {
     const navigate = useNavigate();
-    const handleRowClick = (id) => {
-        navigate(`/locations/${id}`);
-    };
+    // const handleRowClick = (id) => {
+    //     navigate(`/locations/${id}`);
+    // };
 
     const arrayOfLocations = Object.values(games);
     const listLocations = arrayOfLocations[0];
 
     const listOfLocations = Object.values(listLocations).flatMap((location) => (
-        <tr className="table-row" key={location.id}
-            onClick={() => handleRowClick(location.id)}
-            style={{ cursor: 'pointer' }}>
+        <tr className="table-row" key={location.id}>
             <td>{location.name}</td>
             <td>{location.address}</td>
             <td>
