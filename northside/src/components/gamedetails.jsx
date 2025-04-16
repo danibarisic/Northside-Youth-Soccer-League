@@ -17,17 +17,27 @@ export const GameDetails = () => {
 
     return (
         <>
-            <div className="container-details">
-                <h2>Match Details</h2>
-                <h2>{game.team1} vs {game.team2}</h2>
-                <h3>{game.date}</h3>
-                <h3>{game.time}</h3>
-                <h3>{game.location}</h3>
+            <div className="background-container-details">
+                <div className="container-details">
+                    <h2 className="fs-1">Match Details</h2>
+                    <h2>{game.team1} vs {game.team2}</h2>
+                    <h3>{game.date}</h3>
+                    <h3>{game.time}</h3>
+                </div>
             </div>
-            <div className="map-details">
+
+
+            <div className="details-title">
+                <h1 className="my-3 d-flex justify-content-center align-items-center">{game.location}</h1>
+            </div>
+
+            <div className="my-5 d-flex justify-content-center align-items-center">
                 {matchedLocation?.iframe && (
-                    <iframe title={locations.name}
+                    <iframe className="iframeMap" title="Location map"
                         src={matchedLocation.iframe}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
                     />
                 )}
             </div>
