@@ -31,9 +31,9 @@ export const GameDetails = () => {
                 <h1 className="my-3 d-flex justify-content-center align-items-center">{game.location}</h1>
             </div>
 
-            <div className="my-5 d-flex justify-content-center align-items-center">
+            <div className="my-5 d-flex justify-content-center align-items-center mt-0">
                 {matchedLocation?.iframe && (
-                    <iframe className="iframeMap" title="Location map"
+                    <iframe className="iframeMap mt-0" title="Location map"
                         src={matchedLocation.iframe}
                         allowFullScreen=""
                         loading="lazy"
