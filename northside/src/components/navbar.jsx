@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useNavigate, useMatch } from "react-router-dom";
+import { NavLink, useNavigate, useLocation, useMatch, useParams } from "react-router-dom";
 import "../index.css"
 import { signInWithGoogle, signOut, auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -21,8 +21,13 @@ export const SignOutButton = () => {
 
 export const MessagesButton = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const match = location.pathname.match(/\/details\/(\d+)/);
+    const gameId = match ? match[1] : null;
+
     const handleClick = () => {
-        navigate('./messaging');
+        navigate(`./messaging/${gameId}`);
     }
     return (
         <button onClick={handleClick}>Messages</button>
@@ -53,11 +58,6 @@ export const Navbar = () => {
                     <li>
                         {user ? <SignOutButton /> : <SignInButton />}
                     </li>
-                    {/* <li>
-                        <NavLink to="./registration" className={({ isActive }) => (isActive ? 'active' : '')}>
-                            Registration Form
-                        </NavLink>
-                    </li> */}
                 </ul>
             </nav>
         </div>

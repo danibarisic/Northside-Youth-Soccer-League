@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import images from "./components/images";
 import { Home } from "./components/home";
-import { Registration } from "./components/registration";
 import { Schedules } from "./components/schedules";
 import { Navbar } from "./components/navbar"
 import { GameDetails } from './components/gamedetails';
+import { MessageInput } from './components/messaging';
 
 export const Banner = () => {
   return (
@@ -34,8 +34,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/schedules" element={<Schedules />} />
-          <Route path="/details/:id" element={<GameDetails />} />
-          <Route path="/registration" element={<Registration />} />
+          <Route path="/details/:gameId" element={<GameDetails />} />
+          <Route path="/messaging/:gameId" element={
+            <>
+
+              <MessageInput />
+            </>
+          }
+          />
         </Routes>
       </Router>
     </div>

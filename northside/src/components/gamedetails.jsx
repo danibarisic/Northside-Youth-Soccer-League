@@ -4,16 +4,14 @@ import { useParams } from 'react-router-dom';
 import games from "../database.json";
 
 export const GameDetails = () => {
-    const { id } = useParams();
-    const arrayOfGames = Object.values(games);
-    const listOfGames = arrayOfGames[1];
-    const gameList = Object.values(listOfGames);
-    const game = gameList.find((g) => String(g.id) === id);
-
-    const locations = arrayOfGames[0];
-    const matchedLocation = locations[game.location];
+    const { gameId } = useParams();
+    const gameList = Object.values(games.games);
+    const game = gameList.find((g) => String(g.id) === gameId);
 
     if (!game) return <p>Game not found...</p>
+
+    const locations = games.locations;
+    const matchedLocation = locations[game?.location];
 
     return (
         <>
@@ -25,7 +23,6 @@ export const GameDetails = () => {
                     <h3>{game.time}</h3>
                 </div>
             </div>
-
 
             <div className="details-title">
                 <h1 className="my-3 d-flex justify-content-center align-items-center">{game.location}</h1>

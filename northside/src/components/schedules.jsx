@@ -41,10 +41,6 @@ export const Schedules = () => {
                             <LocationTable />
                         </tbody>
                     </table>
-
-                </div>
-                <div>
-
                 </div>
             </div>
         </>
