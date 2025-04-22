@@ -1,25 +1,80 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "../index.css"
+import { useList } from "react-firebase-hooks/database";
+import { useParams } from "react-router-dom";
+import { getAuth } from "firebase/auth";
+import { ref, push } from "firebase/database";
+import { database } from "../firebase.js";
+import games from "../database.json";
 
-export const MessageInput = ({ headerRef }) => {
+export const MessageInput = () => {
+    const { gameId } = useParams();
+    useEffect(() => {
+    }, []);
+
     const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState([]);
+    const gameList = Object.values(games.games);
+    const game = gameList.find((g) => g.id === gameId);
+
+    const gameMessagesRef = ref(database, `messages/${gameId}`);
+    const [snapshots] = useList(gameMessagesRef);
+
     const handleSubmit = (e) => {
+        const auth = getAuth();
+        const user = auth.currentUser;
+
+        if (!user) {
+            alert("You must be signed in to post a message.");
+            return;
+        }
+
         e.preventDefault();
-        console.log(message);
+        const newMessage = {
+            id: Date.now(),
+            text: message,
+            timestamp: new Date().toLocaleString(),
+            user: {
+                name: user.displayName,
+                email: user.email,
+                uid: user.uid,
+            }
+        };
+
+        push(gameMessagesRef, newMessage);
+
+        setMessages(prev => [...prev, newMessage]);
         setMessage('');
+
     };
+
+    if (!gameList) return <p>Game not found...</p>;
 
     return (
         <>
-            <div ref={headerRef}>
-                {/* This could be any content or component you want to manipulate */}
-                <h1>Message Input</h1>
+            <div>
+                <h1>{game.team1} vs {game.team2}</h1>
+                <h3>{game.date}</h3>
+                <h3>{game.time}</h3>
             </div>
+            <ul style={{ listStyleType: 'none' }}>
+                {snapshots?.map((msgSnap) => {
+                    const msg = msgSnap.val();
+                    return (
+                        <li key={msgSnap.key}>
+                            <strong>{msg.user?.name || "anonymous"}</strong> on {msg.timestamp}
+                            <br />
+                            {msg.text}
+                        </li>
+                    );
+                })}
+            </ul>
             <form onSubmit={handleSubmit}>
                 <div style={{ position: 'relative' }}>
                     <textarea
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Type your message..."
+                        placeholder="Enter message..."
                         rows={4}
                         style={{ width: '100%', paddingRight: '60px' }}
                     />
