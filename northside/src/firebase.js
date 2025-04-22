@@ -1,4 +1,5 @@
 import { getDatabase } from 'firebase/database';
+import { getStorage } from 'firebase/storage';
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut as firebaseSignOut } from 'firebase/auth';
 
@@ -17,6 +18,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 export const database = getDatabase(app)
+export const storage = getStorage();
 
 export const signInWithGoogle = async () => {
     try {
