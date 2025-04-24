@@ -90,7 +90,7 @@
         "game6": {
             "id": "6",
             "date": "2025 02/15",
-            "time": "19:30",
+            "time": "19:30h",
             "team1": "Rocket FC",
             "team2": "Strikers X",
             "location": "Promosportive"
@@ -98,7 +98,7 @@
         "game7": {
             "id": "7",
             "date": "2025 02/19",
-            "time": "20:30",
+            "time": "20:30h",
             "team1": "Quantum FC",
             "team2": "Dynamos FC",
             "location": "Promosportive"
@@ -106,7 +106,7 @@
         "game8": {
             "id": "8",
             "date": "2025 02/22",
-            "time": "18:00",
+            "time": "18:00h",
             "team1": "Village Vikings",
             "team2": "Strikers X",
             "location": "Constantí Miranda"
@@ -122,7 +122,7 @@
         "game10": {
             "id": "10",
             "date": "2025 03/01",
-            "time": "17:30",
+            "time": "17:30h",
             "team1": "Dynamos FC",
             "team2": "Rocket FC",
             "location": "Dani Jarque"
@@ -130,7 +130,7 @@
         "game11": {
             "id": "11",
             "date": "2025 03/05",
-            "time": "21:15",
+            "time": "21:15h",
             "team1": "Strikers X",
             "team2": "Village Vikings",
             "location": "Gornal"
@@ -138,7 +138,7 @@
         "game12": {
             "id": "12",
             "date": "2025 03/08",
-            "time": "19:00",
+            "time": "19:00h",
             "team1": "Quantum FC",
             "team2": "Lightning Club",
             "location": "La Torrassa"
@@ -146,7 +146,7 @@
         "game13": {
             "id": "13",
             "date": "2025 03/12",
-            "time": "20:45",
+            "time": "20:45h",
             "team1": "Village Vikings",
             "team2": "Rocket FC",
             "location": "Promosportive"
@@ -162,7 +162,7 @@
         "game15": {
             "id": "15",
             "date": "2025 03/20",
-            "time": "20:00",
+            "time": "20:00h",
             "team1": "Lightning Club",
             "team2": "Rocket FC",
             "location": "Nou Sardenya"
