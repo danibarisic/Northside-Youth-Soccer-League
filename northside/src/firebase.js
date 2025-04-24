@@ -8,7 +8,7 @@ const firebaseConfig = {
     authDomain: "northside-youth-soccer-l-a199a.firebaseapp.com",
     databaseURL: "https://northside-youth-soccer-l-a199a-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "northside-youth-soccer-l-a199a",
-    storageBucket: "northside-youth-soccer-l-a199a.appspot.com",
+    storageBucket: "gs://northside-youth-soccer-l-a199a.firebasestorage.app",
     messagingSenderId: "286595080993",
     appId: "1:286595080993:web:f47d1ca6bb12855d68d460",
     measurementId: "G-KEX7X2JTNK"

@@ -23,7 +23,7 @@ export const MessagesButton = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const match = location.pathname.match(/\/details\/(\d+)/);
+    const match = location.pathname.match(/\/(?:details|messaging|photos)\/(\d+)/);
     const gameId = match ? match[1] : null;
 
     const handleClick = () => {
@@ -34,9 +34,26 @@ export const MessagesButton = () => {
     )
 };
 
-export const Navbar = () => {
+export const PhotosButton = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const match = location.pathname.match(/\/(?:details|messaging|photos)\/(\d+)/);
+    const gameId = match ? match[1] : null;
+
+    const handleClick = () => {
+        navigate(`./photos/${gameId}`);
+    }
+    return (
+        <button onClick={handleClick}>Gallery</button>
+    )
+};
+
+export const Navbar = ({ gameId }) => {
     const [user] = useAuthState(auth);
     const isDetailsPage = useMatch("/details/:gameId");
+    const isMessagesPage = useMatch("/messaging/:gameId");
+    const isGalleryPage = useMatch("/photos/:gameId")
 
     return (
         <div className="container-navbar">
@@ -53,7 +70,10 @@ export const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        {user && isDetailsPage ? <MessagesButton /> : ''}
+                        {user && (isDetailsPage || isGalleryPage) ? <MessagesButton /> : ''}
+                    </li>
+                    <li>
+                        {user && isMessagesPage ? <PhotosButton /> : ''}
                     </li>
                     <li>
                         {user ? <SignOutButton /> : <SignInButton />}

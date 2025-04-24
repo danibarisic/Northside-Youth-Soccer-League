@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "northside-youth-soccer-l-a199a"
-  }
+    "default": "northside-youth-soccer-l-a199a",
+    "northsidestorage": "northside-youth-soccer-l-a199a",
+    "staging": "northside-youth-soccer-l-a199a"
+  },
+  "targets": {},
+  "etags": {}
 }
