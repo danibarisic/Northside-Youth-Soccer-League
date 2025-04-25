@@ -20,7 +20,7 @@ export const LocationTable = () => {
                 {location.mapURL ? (
                     <iframe title={location.name}
                         src={location.iframe}
-                        width="100%"
+                        width={80} height={80}
                     ></iframe>
                 ) : (
                     <span>No Map Available</span>

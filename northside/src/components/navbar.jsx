@@ -19,6 +19,24 @@ export const SignOutButton = () => {
     )
 }
 
+export const BackToMatchButton = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const match = location.pathname.match(/\/(?:details|messaging|photos)\/(\d+)/);
+    const gameId = match ? match[1] : null;
+
+    const handleClick = () => {
+        navigate(`/details/${gameId}`);
+    }
+    return (
+        <div>
+            <button className="back-button" onClick={handleClick}>Back to Match</button>
+        </div>
+
+    )
+}
+
 export const MessagesButton = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -27,10 +45,13 @@ export const MessagesButton = () => {
     const gameId = match ? match[1] : null;
 
     const handleClick = () => {
-        navigate(`./messaging/${gameId}`);
+        navigate(`/messaging/${gameId}`);
     }
     return (
-        <button onClick={handleClick}>Messages</button>
+        <div>
+            <button className="message-button" onClick={handleClick}>Messages</button>
+        </div>
+
     )
 };
 
@@ -42,10 +63,13 @@ export const PhotosButton = () => {
     const gameId = match ? match[1] : null;
 
     const handleClick = () => {
-        navigate(`./photos/${gameId}`);
+        navigate(`/photos/${gameId}`);
     }
     return (
-        <button onClick={handleClick}>Gallery</button>
+        <div>
+            <button className="photo-button" onClick={handleClick}>Gallery</button>
+        </div>
+
     )
 };
 
@@ -69,12 +93,12 @@ export const Navbar = ({ gameId }) => {
                             Schedules
                         </NavLink>
                     </li>
-                    <li>
+                    {/* <li>
                         {user && (isDetailsPage || isGalleryPage) ? <MessagesButton /> : ''}
                     </li>
                     <li>
                         {user && isMessagesPage ? <PhotosButton /> : ''}
-                    </li>
+                    </li> */}
                     <li>
                         {user ? <SignOutButton /> : <SignInButton />}
                     </li>

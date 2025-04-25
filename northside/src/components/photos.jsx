@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import { ref, uploadBytes } from "firebase/storage";
 import { storage } from "../firebase.js";
+import { BackToMatchButton, MessagesButton } from "./navbar.jsx";
 
 export const PhotoInput = () => {
     const { gameId } = useParams();
@@ -12,6 +13,7 @@ export const PhotoInput = () => {
     }, []);
 
     const [image, setImage] = useState(null);
+    const [url, setUrl] = useState();
 
     const onImageChange = (e) => {
         const reader = new FileReader();
@@ -59,13 +61,18 @@ export const PhotoInput = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form className="photo-submit" onSubmit={handleSubmit}>
                 <div className="gallery-container">
                     <label htmlFor="picture">Choose a photo to submit:</label>
                     <input onChange={(e) => { onImageChange(e); }} className="photoInput" type="file" id="picture" name="picture" accept="image/*" capture="environment" />
                 </div>
-                <button type="submit" onClick={uploadToFirebase}>Upload Photo</button>
+                <button className="upload-button" type="submit" onClick={uploadToFirebase}>Upload Photo</button>
             </form>
+
+            <div className="container-buttons">
+                <MessagesButton />
+                <BackToMatchButton />
+            </div>
         </>
     );
 };

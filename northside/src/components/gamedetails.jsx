@@ -2,6 +2,7 @@ import React, { } from 'react';
 import "../index.css"
 import { useParams } from 'react-router-dom';
 import games from "../database.json";
+import { MessagesButton, PhotosButton } from './navbar';
 
 export const GameDetails = () => {
     const { gameId } = useParams();
@@ -37,6 +38,10 @@ export const GameDetails = () => {
                         referrerPolicy="no-referrer-when-downgrade"
                     />
                 )}
+            </div>
+            <div className="container-buttons">
+                <MessagesButton />
+                <PhotosButton />
             </div>
         </>
     )

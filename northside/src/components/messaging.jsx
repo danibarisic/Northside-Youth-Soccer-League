@@ -6,6 +6,7 @@ import { getAuth } from "firebase/auth";
 import { ref, push } from "firebase/database";
 import { database } from "../firebase.js";
 import games from "../database.json";
+import { BackToMatchButton, PhotosButton } from "./navbar.jsx";
 
 export const MessageInput = () => {
     const { gameId } = useParams();
@@ -90,6 +91,11 @@ export const MessageInput = () => {
                     </button>
                 </div>
             </form>
+
+            <div className="container-buttons">
+                <PhotosButton />
+                <BackToMatchButton />
+            </div>
         </>
     );
 };
