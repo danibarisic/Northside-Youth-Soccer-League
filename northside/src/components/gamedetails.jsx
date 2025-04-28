@@ -3,8 +3,11 @@ import "../index.css"
 import { useParams } from 'react-router-dom';
 import games from "../database.json";
 import { MessagesButton, PhotosButton } from './navbar';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
 
 export const GameDetails = () => {
+    const [user] = useAuthState(auth);
     const { gameId } = useParams();
     const gameList = Object.values(games.games);
     const game = gameList.find((g) => String(g.id) === gameId);
@@ -29,7 +32,7 @@ export const GameDetails = () => {
                 <h1 className="my-3 d-flex justify-content-center align-items-center">{game.location}</h1>
             </div>
 
-            <div className="my-5 d-flex justify-content-center align-items-center mt-0">
+            <div className="d-flex justify-content-center align-items-center m-0 p-0">
                 {matchedLocation?.iframe && (
                     <iframe className="iframeMap mt-0" title="Location map"
                         src={matchedLocation.iframe}
@@ -40,8 +43,11 @@ export const GameDetails = () => {
                 )}
             </div>
             <div className="container-buttons">
-                <MessagesButton />
-                <PhotosButton />
+                {user ? (
+                    <>
+                        <MessagesButton />, <PhotosButton />
+                    </>
+                ) : ""}
             </div>
         </>
     )

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useNavigate, useLocation, useMatch, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "../index.css"
 import { signInWithGoogle, signOut, auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -75,9 +75,6 @@ export const PhotosButton = () => {
 
 export const Navbar = ({ gameId }) => {
     const [user] = useAuthState(auth);
-    const isDetailsPage = useMatch("/details/:gameId");
-    const isMessagesPage = useMatch("/messaging/:gameId");
-    const isGalleryPage = useMatch("/photos/:gameId")
 
     return (
         <div className="container-navbar">
@@ -93,12 +90,6 @@ export const Navbar = ({ gameId }) => {
                             Schedules
                         </NavLink>
                     </li>
-                    {/* <li>
-                        {user && (isDetailsPage || isGalleryPage) ? <MessagesButton /> : ''}
-                    </li>
-                    <li>
-                        {user && isMessagesPage ? <PhotosButton /> : ''}
-                    </li> */}
                     <li>
                         {user ? <SignOutButton /> : <SignInButton />}
                     </li>

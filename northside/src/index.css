@@ -93,8 +93,13 @@ button {
 
 .upload-button {
   display: flex;
-  padding: 40px;
+  padding: 20px;
   font-size: 20px;
+}
+
+label,
+input {
+  color: white;
 }
 
 .container-buttons {
@@ -251,9 +256,9 @@ table {
 
 .iframeMap {
   display: block;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 300px;
   background-color: rgb(190, 242, 255);
@@ -265,4 +270,26 @@ table {
   flex-direction: column;
   font-family: sportFont;
   font-size: 20px;
+  margin-bottom: 3em;
+  padding-top: 1em;
+}
+
+.gallery {
+  background-color: rgb(31, 31, 31);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.gallery-photo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }

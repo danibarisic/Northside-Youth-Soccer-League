@@ -4,11 +4,13 @@ import { useList } from "react-firebase-hooks/database";
 import { useParams } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import { ref, push } from "firebase/database";
-import { database } from "../firebase.js";
+import { database, auth } from "../firebase.js";
 import games from "../database.json";
 import { BackToMatchButton, PhotosButton } from "./navbar.jsx";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export const MessageInput = () => {
+    const [user] = useAuthState(auth);
     const { gameId } = useParams();
     useEffect(() => {
     }, []);
@@ -93,8 +95,14 @@ export const MessageInput = () => {
             </form>
 
             <div className="container-buttons">
-                <PhotosButton />
-                <BackToMatchButton />
+                {user ? (
+                    <>
+                        <PhotosButton />
+                        <BackToMatchButton />
+                    </>
+                ) : (
+                    <BackToMatchButton />
+                )}
             </div>
         </>
     );
