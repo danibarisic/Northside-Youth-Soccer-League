@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../index.css"
 import { useParams } from "react-router-dom";
-import { getAuth } from "firebase/auth";
 import { ref as dbRef, push, set, get } from "firebase/database";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { database, storage, auth } from "../firebase.js";
