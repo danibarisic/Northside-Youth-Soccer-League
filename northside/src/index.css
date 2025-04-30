@@ -287,9 +287,14 @@ table {
 }
 
 .gallery-photo {
+  background-color: rgb(31, 31, 31);
   width: 100%;
   max-width: 300px;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.photo-div-background {
+  background-color: rgb(31, 31, 31);
 }

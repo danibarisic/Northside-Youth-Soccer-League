@@ -13,6 +13,7 @@ export const PhotoInput = () => {
     const [image, setImage] = useState(null);
     const [url, setUrl] = useState();
     const [photos, setPhotos] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         if (gameId) {
@@ -66,6 +67,7 @@ export const PhotoInput = () => {
                     console.error(error);
                     alert("Upload failed.");
                 });
+
         } else {
             alert("Please upload an image first.");
         }
@@ -84,7 +86,7 @@ export const PhotoInput = () => {
 
     return (
         <>
-            <div>
+            <div className="photo-div-background">
                 <form className="photo-submit" onSubmit={handleSubmit}>
                     <div className="gallery-container">
                         <label htmlFor="picture">Choose a photo to submit:</label>
@@ -101,8 +103,10 @@ export const PhotoInput = () => {
                     <button className="upload-button" type="submit">Upload Photo</button>
                 </form>
 
+                {loading && <p className="loading-text">Uploading image, please wait...</p>}
+
                 {url && (
-                    <img src={url} className="img-fluid" alt="Gallery" />
+                    <img src={url} className="gallery-photo" alt="Gallery" />
                 )}
                 <div className="gallery">
                     {photos.length === 0 ? (
