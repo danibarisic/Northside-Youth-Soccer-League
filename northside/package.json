@@ -6,6 +6,7 @@
     "bootstrap": "^5.3.5",
     "cra-template-pwa": "2.0.0",
     "firebase": "^11.6.0",
+    "pwa-asset-generator": "^8.0.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-firebase-hooks": "^5.1.1",
