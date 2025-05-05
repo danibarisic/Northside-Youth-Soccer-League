@@ -44,6 +44,8 @@ export const PhotoInput = () => {
 
     const uploadToFirebase = () => {
         if (image) {
+            setLoading(true);
+
             const imageRef = ref(storage, `images/${gameId}/${image.name}`);
 
             uploadBytes(imageRef, image)
@@ -66,8 +68,10 @@ export const PhotoInput = () => {
                 .catch((error) => {
                     console.error(error);
                     alert("Upload failed.");
+                })
+                .finally(() => {
+                    setLoading(false);
                 });
-
         } else {
             alert("Please upload an image first.");
         }
@@ -100,7 +104,9 @@ export const PhotoInput = () => {
                             capture="environment"
                         />
                     </div>
-                    <button className="upload-button" type="submit">Upload Photo</button>
+                    <button className="upload-button" type="submit" disabled={loading}>
+                        {loading ? "Uploading..." : "Upload Photo"}
+                    </button>
                 </form>
 
                 {loading && <p className="loading-text">Uploading image, please wait...</p>}
